@@ -1,0 +1,103 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2c2c2c;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.book-container {
+    width: 95vw;
+    height: 85vh;
+    margin: 20px auto;
+    perspective: 2000px;
+}
+
+
+#book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+.page {
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+
+    padding: 20px;
+    overflow-y: auto;
+
+    
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.page.flipped {
+    transform: rotateY(-180deg);
+}
+
+.page.cover {
+    padding: 0;
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   
+}
+
+.page h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.page h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.page p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    text-align: justify;
+}
+
+.page img:not(.intro-img-) {
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 18px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 6px;
+    background: #243b55;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
